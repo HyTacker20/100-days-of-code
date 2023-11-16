@@ -24,11 +24,9 @@ while not at_goal():
         move()
         if front_is_clear():
             move()
-    while front_is_clear() and wall_on_right():
-        move()
-    if right_is_clear() and wall_in_front():
+    if right_is_clear():
         turn_right()
-    elif front_is_clear() and not right_is_clear():
+    elif front_is_clear() and wall_on_right():
         move()
     else:
         turn_left()
