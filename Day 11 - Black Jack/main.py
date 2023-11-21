@@ -70,7 +70,7 @@ def start_game():
     print(f'\tYour final hand: {my_cards}, final score: {my_score}')
     print(f'\tComputer\'s final hand: {computers_cards}, final score: {computers_score}')
     print(compare(my_score, computers_score))
-    
+
     ask_to_play()
 
 
