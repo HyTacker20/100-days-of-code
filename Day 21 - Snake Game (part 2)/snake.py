@@ -5,12 +5,20 @@ class Snake:
     starting_position = [(0, 0), (-20, 0), (-40, 0)]
 
     def __init__(self, segments_count=3):
-        self.head = None
+        self.head: Turtle
         self.segments = []
         self.segments_count = segments_count
-        self.generate_snake(segments_count)
+        self.__generate_snake(segments_count)
 
-    def generate_snake(self, segments_count: int):
+    def grow(self):
+        new_segment = Turtle()
+        new_segment.shape("square")
+        new_segment.color("white")
+        new_segment.penup()
+        new_segment.goto(self.segments[-1].pos())
+        self.segments.append(new_segment)
+
+    def __generate_snake(self, segments_count: int):
         for s in range(segments_count):
             new_segment = Turtle()
             new_segment.shape("square")
